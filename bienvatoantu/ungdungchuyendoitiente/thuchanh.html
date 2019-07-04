@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+       
+        <title>Chuyển đổi tiền tệ</title> 
+        <body>
+          <h1>Chuyển đổi tiền VNĐ sang USD và từ USD sang VNĐ</h1>
+          <p>Giao diện chuyển đổi tiền tệ</p>
+        </body>
+        <table style="width:100%">
+                <tr>
+                    <td>Amount<br/>
+                    <input type="number" id ="tien" value="">
+                    </td>
+                    <td>From Currency<br/>
+                    <select id="fromc">
+                    <option value="vietnam">VND</option>
+                    <option value="usd">USD</option>
+                    </td>
+                    <td>To Currency<br/>
+                    <select id="toc">
+                    <option value="USD">USD</option>
+                    <option value="Vietnam">VND</option>
+                    </select>
+                    </td>
+                    <td>
+                    <button type="button" onclick="convert()" > Convert</button> 
+                    </td>
+                </tr>
+        </table>
+        <div id="demo"></div>
+        <script>
+            function convert() 
+            {
+                let amount = document.getElementById("tien").value ; // Khai báo biên và gán giá trị để use cho if ở dưới
+                let from = document.getElementById("fromc").value // Khai báo biên và gán giá trị để use cho if ở dưới
+                let to = document.getElementById("toc").value // Khai báo biên và gán giá trị để use cho if ở dưới
+                if (amount <0) // khai báo nhập số âm thì nhập lại số khác
+                {
+                    alert("Nhập lại 1 số khác") 
+                }
+                else
+                {
+                    if(from=="vietnam" && to=="USD")
+                {
+                    document.getElementById('demo').innerHTML="Chuyển sang tiền VND là: " + amount/23000
+                }
+                if(from=="usd" && to=="Vietnam")
+                {
+                    document.getElementById('demo').innerHTML="Chuyển sang tiền USD là: " + amount*23000 
+                }
+                if(from=="vietnam" && to=="Vietnam")
+                {
+                    document.getElementById('demo').innerHTML="Chuyển sang tiền VND là: " + amount
+                }
+                if(from=="usd" && to=="USD")
+                {
+                    document.getElementById('demo').innerHTML="Chuyển sang tiền USD là: " + amount
+                }
+                
+                }
+            }
+        </script>
+        
+</html>
