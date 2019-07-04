@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <td>
+                <input type="number" id="so1" value="">
+            
+                <input type="number" id="so2" value="">
+            </td>
+        </tr>
+        <tr>
+            <td>
+               <button type="button" onclick="addition()">Addition(+)</button>
+               <button type="button" onclick="subtraction()">Subtraction(-)</button>
+               <button type="button" onclick="multiplication()">Multiplication(X)</button>
+               <button type="button" onclick="division()">Division(/)</button>
+        </tr>
+    </table>
+    <div id="demo"></div>
+    <script>
+        function addition()
+        {
+            let SO1 = + document.getElementById("so1").value // khai bao bien SO1 va gan gia tri so1 cho no
+            let SO2 = + document.getElementById("so2").value // + document.getElementById = parseInt xem trường hợp dưới
+            let add = SO1 + SO2                              // chỉ có phép + mới cần đổi thành + document.getElementById để tránh gộp chuỗi còn -,*,/ ko cần vì ko có /,*,/ chuỗi chỉ có + (gộp) chuỗi
+            document.getElementById("demo").innerHTML="Tổng là: " + add
+        }
+        function subtraction()
+        {
+            let SO1 = document.getElementById("so1").value 
+            SS1 = parseInt(SO1)                                  // 
+            let SO2 = document.getElementById("so2").value 
+            SS2 = parseInt(SO2)
+            document.getElementById("demo").innerHTML="Hiệu là: " + (SS1-SS2)
+        }
+        function multiplication()
+        {
+            let SO1 = document.getElementById("so1").value
+            let SO2 = document.getElementById("so2").value
+            let multip = SO1 * SO2
+            document.getElementById("demo").innerHTML="Tích là: " + multip
+        }
+        function division()
+        {
+            let SO1 = document.getElementById("so1").value
+            let SO2 = document.getElementById("so2").value
+            let divi = SO1 / SO2
+            document.getElementById("demo").innerHTML="Chia là: " + divi
+        }
+
+    </script>
+</body>
+</html>
