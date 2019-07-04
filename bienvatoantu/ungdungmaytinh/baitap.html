@@ -21,6 +21,7 @@
                <button type="button" onclick="subtraction()">Subtraction(-)</button>
                <button type="button" onclick="multiplication()">Multiplication(X)</button>
                <button type="button" onclick="division()">Division(/)</button>
+               </td>
         </tr>
     </table>
     <div id="demo"></div>
@@ -28,17 +29,16 @@
         function addition()
         {
             let SO1 = + document.getElementById("so1").value // khai bao bien SO1 va gan gia tri so1 cho no
-            let SO2 = + document.getElementById("so2").value // + document.getElementById = parseInt xem trường hợp dưới
+            let SO2 = + document.getElementById("so2").value // + document.getElementById = để chuyển chuỗi thành số nguyên
             let add = SO1 + SO2                              // chỉ có phép + mới cần đổi thành + document.getElementById để tránh gộp chuỗi còn -,*,/ ko cần vì ko có /,*,/ chuỗi chỉ có + (gộp) chuỗi
             document.getElementById("demo").innerHTML="Tổng là: " + add
         }
         function subtraction()
         {
-            let SO1 = document.getElementById("so1").value 
-            SS1 = parseInt(SO1)                                  // 
-            let SO2 = document.getElementById("so2").value 
-            SS2 = parseInt(SO2)
-            document.getElementById("demo").innerHTML="Hiệu là: " + (SS1-SS2)
+            let SO1 = document.getElementById("so1").value
+            let SO2 = document.getElementById("so2").value
+            let sub = SO1 - SO2
+            document.getElementById("demo").innerHTML="Hiệu là: " + sub
         }
         function multiplication()
         {
@@ -52,7 +52,7 @@
             let SO1 = document.getElementById("so1").value
             let SO2 = document.getElementById("so2").value
             let divi = SO1 / SO2
-            document.getElementById("demo").innerHTML="Chia là: " + divi
+           document.getElementById("demo").innerHTML="Chia là: " + divi
         }
 
     </script>
