@@ -52,9 +52,12 @@
             let SO1 = document.getElementById("so1").value
             let SO2 = document.getElementById("so2").value
             let divi = SO1 / SO2
-           document.getElementById("demo").innerHTML="Chia là: " + divi
+            if (SO2 == 0) {
+                document.getElementById("demo").innerHTML="Kết quả: " + "Không thể chia 0"
+            } else 
+                document.getElementById("demo").innerHTML ="Chia là: " + divi   
         }
 
     </script>
 </body>
-</html>
+</html> 
